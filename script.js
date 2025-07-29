@@ -28,6 +28,16 @@ const taskList = document.getElementById('task-list');
 
   taskList.appendChild(li);
 
-  // Clear input field
+  
   taskInput.value = '';
 }
+ const addButton = document.getElementById('add-task-btn');
+const taskInput = document.getElementById('task-input');
+
+addButton.addEventListener('click', addTask);
+
+taskInput.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    addTask();
+  }
+});
